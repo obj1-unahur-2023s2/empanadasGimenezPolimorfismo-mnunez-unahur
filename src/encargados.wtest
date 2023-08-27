@@ -1,0 +1,18 @@
+import encargado.*
+import empleados.*
+
+test "Gimenez le paga a Baigorria" {
+	baigorria.venderEmplanadas(1000)
+	gimenez.pagarA(baigorria)
+
+	assert.equals(2850000, gimenez.fondo())
+	assert.equals(150000, baigorria.totalCobrado())
+
+}
+
+test "Gimenez le paga a Galvan" {
+	gimenez.pagarA(galvan)
+
+	assert.equals(2850000, gimenez.fondo())
+
+}

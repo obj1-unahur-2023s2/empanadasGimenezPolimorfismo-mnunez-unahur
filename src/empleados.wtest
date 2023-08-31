@@ -1,23 +1,24 @@
 import empleados.*
 
-test "Galvan tiene sueldo inicial 150000" {
+describe "Galvan" {
+test "tiene sueldo inicial 150000" {
 
 	assert.equals(150000, galvan.sueldo())
 
 }
 
 
-test "Galvan tiene totalDeuda inicial = 0" {
+test "tiene totalDeuda inicial = 0" {
 
 	assert.equals(0, galvan.totalDeuda())
 }
 
-test "Galvan tiene totalDinero inicial = 0" {
+test "tiene totalDinero inicial = 0" {
 
 	assert.equals(0, galvan.totalDinero())
 }
 
-test "Galvan maneja sus finanzas" {
+test "maneja sus finanzas" {
 
 	// Galván gasta 40000, totalDeuda() debe ser 40000, totalDinero() debe ser 0
 	galvan.gastar(40000)
@@ -47,28 +48,31 @@ test "Galvan maneja sus finanzas" {
 	assert.equals(0, galvan.totalDinero())
 	assert.equals(70000, galvan.totalDeuda())
 	
+	}
+	
+}
+
+
+describe "test Baigorria" {
+	test "tiene una comision inicial de 150 pesos por empanada" {
+		assert.equals(150, baigorria.comisionPorEmpanadaVendida())
+	
+	}
+	
+	test "Sueldo de Baigorria depende de la cantidad vendida" {
+		baigorria.venderEmpanadas(10)
+		assert.equals(1500, baigorria.sueldo())
+	
+	}
+	
+	test "Sueldo de Baigorria acumula el sueldo cobrado" {
+		baigorria.venderEmpanadas(10)
+		baigorria.cobrarSueldo()
+		assert.equals(1500, baigorria.totalCobrado())
+	
+	}	
 }
 
 
 
-
-
-
-test "Baigorria tiene una comision inicial de 150 pesos por empanada" {
-	assert.equals(150, baigorria.comisionPorEmpanadaVendida())
-
-}
-
-test "Sueldo de Baigorria depende de la cantidad vendida" {
-	baigorria.venderEmplanadas(10)
-	assert.equals(1500, baigorria.sueldo())
-
-}
-
-test "Sueldo de Baigorria acumula el sueldo cobrado" {
-	baigorria.venderEmplanadas(10)
-	baigorria.cobrarSueldo()
-	assert.equals(1500, baigorria.totalCobrado())
-
-}
 

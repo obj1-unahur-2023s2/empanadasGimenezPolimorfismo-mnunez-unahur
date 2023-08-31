@@ -2,7 +2,7 @@ import encargado.*
 import empleados.*
 
 test "Gimenez le paga a Baigorria" {
-	baigorria.venderEmplanadas(1000)
+	baigorria.venderEmpanadas(1000)
 	gimenez.pagarA(baigorria)
 
 	assert.equals(2850000, gimenez.fondo())

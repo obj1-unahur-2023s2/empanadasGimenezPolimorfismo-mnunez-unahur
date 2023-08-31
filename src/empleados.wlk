@@ -1,9 +1,8 @@
 object galvan {
-	var sueldo = 150000
+	var property sueldo = 150000
 	var totalDeuda = 0
 	var totalDinero = 0
 	
-	// manejo de deuda
 	method totalDeuda() = totalDeuda
 	method gastar(importe) {
 		totalDeuda += 0.max(importe - totalDinero)
@@ -13,20 +12,16 @@ object galvan {
 	method totalDinero() = totalDinero
 	
 	
-	// manejo de sueldo
-	method sueldo() = sueldo
 	method cobrarSueldo() {
 		totalDinero += 0.max(sueldo - totalDeuda)
 		totalDeuda = 0.max(totalDeuda - sueldo)
 	}
-
-	
 }
 
 
 object baigorria {
 	var cantidadEmpanadasVendidas = 0
-	var comisionPorEmpanadaVendida = 150
+	const comisionPorEmpanadaVendida = 150
 	var totalCobrado = 0
 	
 	method cantidadEmpanadasVendidas() = cantidadEmpanadasVendidas
@@ -35,7 +30,7 @@ object baigorria {
 	
 	method sueldo() = cantidadEmpanadasVendidas * comisionPorEmpanadaVendida
 
-	method venderEmplanadas(cantidad) {
+	method venderEmpanadas(cantidad) {
 			cantidadEmpanadasVendidas += cantidad
 	}
 	
